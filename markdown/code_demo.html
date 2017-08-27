@@ -1,0 +1,83 @@
+
+
+<div class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">提示</h4>
+      </div>
+      <div class="modal-body">
+        <p>这是一段信息</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+        <button type="button" class="btn btn-primary">确 定</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>/.modal
+
+
+
+<el-dialog title="提示"  size="tiny">
+    这是一段信息
+</el-dialog>
+
+
+<template>
+    <ul>
+        <li v-for="item in list">
+            <a :href="item.link">{{item.name}}</a>
+        </li>
+    </ul>
+</template>
+<script>
+    export defalut {
+        data() {
+            return {
+                list: [
+                    {link:'fenqile.com', name: '分期乐'},
+                    {link:'juzilicai.com', name: '桔子理财'},
+                    {link:'google.com', name:'谷歌'},
+                ]
+            }
+        },
+        methods: {
+            add() {
+                this.list.push({ link:'lexinfintech.com', name: '乐信集团' })
+            }
+        }
+    }
+</script>
+
+
+function getListHtml(list) {
+    let html = "";
+    list.forEach(function(item){
+        html += '<li> <a href="' + item.link + '">' +
+            item.name +
+        '</a></li>'
+    });
+    return html ;
+}
+$('ul').html( getListHtml(list) );
+// 新建
+$('ul').append('<li> <a href="lexinfintech.com">乐信集团</a></li>');
+
+
+
+
+
+<div id="app">
+    <p>{{ message }}</p>
+    <input v-model="message">
+</div>
+<script>
+var app6 = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+</script>
